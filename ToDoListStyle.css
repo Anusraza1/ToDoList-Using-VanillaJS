@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: #e2d067;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-form {
+    background: #8c9b4c;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    width: 50vh;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #1f1e1e;
+}
+
+#input-sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f1f1;
+    box-shadow:  4px 5px 10px rgba(0,0,0,0.15);
+    border-radius: 50px;
+    padding: 1px 10px;
+    margin-bottom: 1rem;
+}
+
+#input-sec input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
+}
+
+#input-sec button {
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#input-sec button:hover {
+    color: green;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f1f1;
+    padding: 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding-right: 5px;
+}
+.edit-btn:hover {
+    color: blue;
+}
+
+.del-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+.del-btn:hover {
+    color: red;
+}

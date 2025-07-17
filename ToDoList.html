@@ -7,20 +7,28 @@
     <link rel="stylesheet" href="ToDoListStyle.css" />
 </head>
 <body>
-    <form class="task-form">
-        <div id="container">
+    <div class="container">
+        <form class="task-form">
+        <div>
             <h1>To Do List</h1>
             <div id="input-sec">
                 <input id="task-input" placeholder="Write your task">
                 <button id="add-btn"> ✚ </button>
             </div>
         </div>
-        <div id="display-sec">
+        <div id="task-list-container">
             <ul id="task-list">
                 
             </ul>
         </div>
     </form>
+    <form class="Comp-Task-form">
+        <h1> Completed Tasks</h1>
+        <ul id="id-comp-task-list" class="completed-task-list">
+
+        </ul>
+    </form>
+    </div>
 <script src="ToDoListJS.js"></script>
 
 </body>

@@ -22,10 +22,12 @@ body {
 .task-form {
     background: #8c9b4c;
     padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    box-shadow: 0 6px 10px #00000026;
+    height: 60vh;
     width: 50vh;
     text-align: center;
+    margin-right: 2rem;
 }
 
 h1 {
@@ -39,9 +41,9 @@ h1 {
     justify-content: space-between;
     background: #f1f1f1;
     box-shadow:  4px 5px 10px rgba(0,0,0,0.15);
-    border-radius: 50px;
+    border-radius: 35px;
     padding: 1px 10px;
-    margin-bottom: 1rem;
+    margin-bottom: 8px;
 }
 
 #input-sec input {
@@ -62,44 +64,28 @@ h1 {
     color: green;
 }
 
+#task-list-container {
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
 .list-Item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #f1f1f1;
-    padding: 10px 10px;
+    padding: 2vh 2vh;
     border-radius: 10px;
     margin-bottom: 8px;
     font-size: 14px;
 }
 
-.edit-sec{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #f1f1f1;
-    box-shadow:  4px 5px 10px rgba(0,0,0,0.15);
-    border-radius: 50px;
-    padding: 1px 10px;
-    margin-bottom: 1rem;
-}
-
-.edit-input {
+.task-I-O {
     border: none;
     outline: none;
     background: transparent;
     padding: 10px;
     font-size: 14px;
-}
-
-.edit-button { background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    padding-right: 5px;
-}
-.edit-button:hover {
-    color: blue;
 }
 
 .edit-btn {
@@ -113,6 +99,17 @@ h1 {
     color: blue;
 }
 
+.edit-button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding-right: 5px;
+}
+.edit-button:hover {
+    color: blue;
+}
+
 .del-btn {
     background: none;
     border: none;
@@ -123,3 +120,16 @@ h1 {
 .del-btn:hover {
     color: red;
 }
+
+
+.Comp-Task-form {
+    background: #8c9b4c;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    height: 60vh;
+    width: 50vh;
+    text-align: center;
+    overflow-y: auto;
+}
+

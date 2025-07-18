@@ -32,7 +32,11 @@ function addTask(event, item, i) {
     }
 
     const list_Item = document.createElement('li');
+    list_Item.draggable = 'true'
     list_Item.className = 'list-Item';
+
+    const input_container = document.createElement('div')
+    input_container.className = 'item-container'
 
     const CompCheckBox = document.createElement('input')
     CompCheckBox.type = "checkbox"
@@ -42,6 +46,12 @@ function addTask(event, item, i) {
     task_I_O.value = item
     task_I_O.disabled = true
 
+    input_container.appendChild(CompCheckBox)
+    input_container.appendChild(task_I_O)
+
+    const btn_container = document.createElement('div')
+    btn_container.className = 'item-container'
+
     const editBtn = document.createElement('button');
     editBtn.className = 'edit-btn';
     editBtn.textContent = '✎';
@@ -50,10 +60,16 @@ function addTask(event, item, i) {
     delBtn.className = 'del-btn';
     delBtn.textContent = '✖';
 
-    list_Item.appendChild(CompCheckBox);
-    list_Item.appendChild(task_I_O);
-    list_Item.appendChild(editBtn);
-    list_Item.appendChild(delBtn);
+    btn_container.appendChild(editBtn)
+    btn_container.appendChild(delBtn)
+
+    list_Item.appendChild(input_container)
+    list_Item.appendChild(btn_container)
+
+    // list_Item.appendChild(CompCheckBox);
+    // list_Item.appendChild(task_I_O);
+    // list_Item.appendChild(editBtn);
+    // list_Item.appendChild(delBtn);
 
     task_list.appendChild(list_Item);
     task_input.value = '';
@@ -61,8 +77,9 @@ function addTask(event, item, i) {
     editBtn.addEventListener('click', function(event) {
     event.preventDefault();
     task_I_O.disabled = false
-    task_I_O.style.border = "solid 2px"
-    list_Item.removeChild(delBtn)
+    task_I_O.style.border = "solid 1px"
+    task_I_O.style.borderRadius = "5px"
+    btn_container.removeChild(delBtn)
 
     const edit_button = document.createElement('button');
     edit_button.textContent = '✎';
@@ -70,21 +87,28 @@ function addTask(event, item, i) {
 
     editBtn.replaceWith(edit_button)
 
-    edit_button.addEventListener('click', function(event) {
-        event.preventDefault()
-        let edited_task = task_I_O.value
-        if (edited_task === '') {
-            alert('Please enter a valid task')
-            return
+    task_I_O.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            edit_task(event);
         }
-        let key = localStorage.key(i);
-        localStorage.setItem(key, edited_task)
-        task_I_O.disabled = true
-        task_I_O.style.border = 'none'
+    });
 
-        edit_button.replaceWith(editBtn)
-        list_Item.appendChild(delBtn)
-    })
+    edit_button.addEventListener('click', edit_task);
+    
+    function edit_task(event) {
+        event.preventDefault();
+        let edited_task = task_I_O.value;
+        if (edited_task === '') {
+            alert('Please enter a valid task');
+            return;
+        }
+        let key = localStorage.key(i)
+        localStorage.setItem(key, edited_task);
+        task_I_O.disabled = true;
+        task_I_O.style.border = 'none';
+        edit_button.replaceWith(editBtn);
+        btn_container.appendChild(delBtn);
+    }
 });
 
     CompCheckBox.addEventListener('click', function onChange(event) {
@@ -96,6 +120,8 @@ function addTask(event, item, i) {
         
         const comp_task_div = document.createElement('div')
         comp_task_div.textContent = task_I_O.value
+        comp_task_div.style.overflowWrap = "break-word";
+        comp_task_div.style.width = "350px";
         comp_task_div.style.textDecoration = "line-through";
 
         const comp_task = document.createElement('li')
@@ -108,13 +134,14 @@ function addTask(event, item, i) {
         Comp_task_list.appendChild(comp_task)
 
         delButton.addEventListener('click', function() {
-            localStorage.removeItem(i);
+            let key = localStorage.key(i);
+            localStorage.removeItem(key);
             Comp_task_list.removeChild(comp_task);
         })
     })
     delBtn.addEventListener('click', function() {
-        localStorage.removeItem(i);
+        let key = localStorage.key(i);
+        localStorage.removeItem(key);
         task_list.removeChild(list_Item);
     });
-
 }

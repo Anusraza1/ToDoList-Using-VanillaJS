@@ -56,13 +56,13 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 6px 10px #00000026;
-    min-height: 450px;
-    min-width: 450px;
+    min-height: 370px;
+    min-width: 400px;
     text-align: center;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
-#input-sec {
+.input-sec {
     display: flex;
     align-items: center;
     border:  solid 1px gray;
@@ -74,29 +74,27 @@ body {
     margin-bottom: 8px;
 }
 
-#input-sec input {
+.input-sec input {
     border: none;
     outline: none;
     background: transparent;
-    min-width: 350px;
+    min-width: 170px;
     padding: 10px;
     font-size: 14px;
 }
 
-#input-sec button {
+.input-sec button {
     border: none;
     background: transparent;
     font-size: 20px;
     font-weight: bold;
 }
 
-#input-sec button:hover {
+.input-sec button:hover {
     color: green;
 }
 
-#task-list-container {
-    overflow: auto;
-}
+
 
 .list-Item {
     display: flex;
@@ -104,10 +102,10 @@ body {
     align-items: center;
     justify-content: space-between;
     background: #ffffff;
-    padding: 10px 10px;
+    padding: 6px 10px;
     border-radius: 10px;
     margin-bottom: 8px;
-    min-width: 200px;
+    min-width: 170px;
     min-height: 35px;
     font-size: 14px;
 }
@@ -160,8 +158,8 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-    min-height: 450px;
-    width: 450px;
+    min-height: 370px;
+    width: 400px;
     text-align: center;
     overflow-y: auto;
 }
